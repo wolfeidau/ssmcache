@@ -19,7 +19,7 @@ jobs:
     - name: Get dependencies
       run: make deps
 
-      - name: Generate
+    - name: Generate
       run: make generate
 
     - name: Lint

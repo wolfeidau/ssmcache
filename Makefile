@@ -1,5 +1,10 @@
-ci: deps lint test ##=> Run all CI targets
+ci: deps generate lint test ##=> Run all CI targets
 .PHONY: ci
+
+generate: ##=> generate all the things
+	@echo "--- generate all the things"
+	@go generate ./...
+.PHONY: generate
 
 lint: ##=> Lint all the things
 	@echo "--- lint all the things"

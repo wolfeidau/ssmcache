@@ -1,4 +1,4 @@
-ci: deps generate lint test ##=> Run all CI targets
+ci: generate lint test ##=> Run all CI targets
 .PHONY: ci
 
 generate: ##=> generate all the things
@@ -8,17 +8,12 @@ generate: ##=> generate all the things
 
 lint: ##=> Lint all the things
 	@echo "--- lint all the things"
-	@$(shell pwd)/.bin/golangci-lint run
+	@docker run --rm -v $(shell pwd):/app -w /app golangci/golangci-lint:v1.45.2 golangci-lint run -v
 .PHONY: lint
 
 clean: ##=> Clean all the things
 	$(info [+] Clean all the things...")
 .PHONY: clean
-
-deps: ##=> Intall all the dependencies to build
-	$(info [+] Installing deps...")
-	@curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh| sh -s -- -b $(shell pwd)/.bin v1.21.0
-.PHONY: deps
 
 test: ##=> Run the tests
 	$(info [+] Run tests...")

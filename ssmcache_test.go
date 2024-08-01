@@ -6,9 +6,9 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/ssm"
-	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 	"github.com/wolfeidau/ssmcache/mocks/awsmock"
+	"go.uber.org/mock/gomock"
 )
 
 func TestGetKey(t *testing.T) {

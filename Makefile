@@ -1,4 +1,4 @@
-GOLANGCI_VERSION = v1.47.0
+GOLANGCI_VERSION = v1.59.1
 
 bin/golangci-lint: bin/golangci-lint-${GOLANGCI_VERSION}
 	@ln -sf golangci-lint-${GOLANGCI_VERSION} bin/golangci-lint
